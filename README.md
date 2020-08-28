@@ -1,6 +1,12 @@
-# FileTextSearch
+# File Text Search
+Its a web app, user can upload a text file to see the contents of the file. User can search a text or sentence in the content of the file through the search bar. Search result gives the no of occurences of the search string and highlighted the occurrences of the search string in the text
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+## Tech Stack
+- Angular
+
+### `npm install`
+
+Install all dependencies of the project
 
 ## Development server
 
