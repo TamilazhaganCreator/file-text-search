@@ -12,7 +12,7 @@ export class UploadfileComponent {
 
   @Output() getFileContent: EventEmitter<any> = new EventEmitter()
   @Output() getFileName: EventEmitter<any> = new EventEmitter()
-  @Output() checkFileContent: EventEmitter<boolean> = new EventEmitter()
+  @Output() validContentCheck: EventEmitter<boolean> = new EventEmitter()
 
   @ViewChild("inputUpload", { static: false }) private inputUpload: ElementRef;
 
@@ -24,12 +24,12 @@ export class UploadfileComponent {
     let file = event.target.files[0];
     let fileReader = new FileReader();
     fileReader.onload = (e) => {
-      this.checkFileConttent(fileReader, file);
+      this.checkFileContent(fileReader, file);
     }
     fileReader.readAsText(file);
   }
 
-  private checkFileConttent(fileReader: FileReader, file: any) {
+  private checkFileContent(fileReader: FileReader, file: any) {
     let content = fileReader.result.toString();
     if (content.length == 0)
       this.setFileContent(null, false, "Empty file");
@@ -44,7 +44,7 @@ export class UploadfileComponent {
       this.uploadedFile = null;
     this.uploadedFileName = fileName;
     this.getFileName.next(this.uploadedFileName);
-    this.checkFileContent.next(validOrNot)
+    this.validContentCheck.next(validOrNot)
     this.getFileContent.next(content);
   }
 

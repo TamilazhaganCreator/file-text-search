@@ -21,7 +21,7 @@ export class AppComponent {
     this.uploadedFileName = event;
   }
 
-  checkFileContent(event) {
+  validContentCheck(event) {
     this.validFileContent = event;
   }
 }
