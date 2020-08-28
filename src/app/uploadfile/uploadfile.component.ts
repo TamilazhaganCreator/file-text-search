@@ -5,7 +5,7 @@ import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '
   templateUrl: './uploadfile.component.html',
   styleUrls: ['./uploadfile.component.css']
 })
-export class UploadfileComponent implements OnInit {
+export class UploadfileComponent {
 
   uploadedFileName: string;
   uploadedFile;
@@ -15,8 +15,6 @@ export class UploadfileComponent implements OnInit {
   @Output() checkFileContent: EventEmitter<boolean> = new EventEmitter()
 
   @ViewChild("inputUpload", { static: false }) private inputUpload: ElementRef;
-
-  constructor() { }
 
   ngOnInit() {
     this.setFileContent(null, true, "Kindly Upload a text file to see it's content")

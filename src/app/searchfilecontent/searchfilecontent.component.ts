@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './searchfilecontent.component.html',
   styleUrls: ['./searchfilecontent.component.css']
 })
-export class SearchfilecontentComponent implements OnInit {
+export class SearchfilecontentComponent {
 
   searchText: string;
   noOfOccurrence: number = 0;
@@ -13,11 +13,6 @@ export class SearchfilecontentComponent implements OnInit {
   @Input() fileContent: string;
   @Input() uploadedFileName: string;
   @Input() validFileContent: boolean;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   searchTextFunc() {
     this.fileContent = this.fileContent.replace(/(<mark>|<\/mark>)/igm, "");

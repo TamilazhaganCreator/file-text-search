@@ -14,19 +14,19 @@
         display: flex;
     }
 
-    .right-col {
-        width: 60%;
-        padding-left: 15px;
-    }
-
     .left-col {
         width: 40%;
         padding-right: 15px;
+    }
+
+    .right-col {
+        width: 60%;
+        padding-left: 15px;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .left-col {
-        padding-bottom: 2%;
+        padding-bottom: 20px;
     }
 }

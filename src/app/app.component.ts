@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
 
-  fileContent: string = "";
+  fileContent: string;
   uploadedFileName: string;
   validFileContent: boolean;
 

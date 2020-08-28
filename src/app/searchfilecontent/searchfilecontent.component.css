@@ -1,5 +1,4 @@
 .search-text-input {
-    width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: .5rem .75rem;
@@ -21,21 +20,27 @@
     padding: 16px;
     border-radius: 4px;
     background: #fff;
-    overflow: auto;
     margin-top: 30px;
     text-align: justify;
 }
 
+@media only screen and (max-width: 768px) {
+    .file-content-card {
+        margin-top: 10px;
+    }
+}
+
 .content-hdr {
     padding-bottom: 8px;
+    margin-bottom: 8px;
     font-weight: 500;
     color: #1976d2;
     border-bottom: 1px solid #ccc;
 }
 
 .file-content-div {
-    padding-top: 8px;
     height: 50vh;
+    overflow: auto;
 }
 
 .empty-msg,
@@ -44,7 +49,6 @@
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    padding-top: 0;
     opacity: .8;
 }
 
