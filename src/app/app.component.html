@@ -3,29 +3,13 @@
   <div class="page-content">
     <div class="flexbox">
       <div class="left-col">
-        <div class="upload-div">
-          <div *ngIf="uploadedFileName">
-            <div class="uploaded-title">Uploaded file:</div>
-            <div class="uploaded-text-file">
-              {{uploadedFileName}}
-            </div>
-          </div>
-          <button class="upload-btn" (click)="upload()">
-            {{uploadedFileName ?  'Change Uploaded File' : 'Upload File'}}
-          </button>
-          <input hidden type="file" #inputUpload (change)="getTextFileDetails($event)" accept="text/plain">
-        </div>
+        <app-uploadfile (getFileContent)="setFileContent($event)" (checkFileContent)="checkFileContent($event)"
+          (getFileName)="setFileName($event)"></app-uploadfile>
       </div>
       <div class="right-col">
-        <div>
-          <input type="text" [disabled]="!uploadedFileName" class="search-text-input" (input)="searchTextFunc()"
-            placeholder="Search text..." [(ngModel)]="searchText">
-          <div class="occurences">
-            Total No of occurrences of search string : {{noOfOccurrence}}
-          </div>
-        </div>
-        <div class="file-content-card" [innerHTML]="fileContent">
-        </div>
+        <app-searchfilecontent [fileContent]="fileContent" [uploadedFileName]="uploadedFileName"
+          [validFileContent]="validFileContent">
+        </app-searchfilecontent>
       </div>
     </div>
   </div>

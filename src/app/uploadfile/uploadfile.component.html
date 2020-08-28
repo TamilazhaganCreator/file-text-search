@@ -1,0 +1,13 @@
+<div class="upload-div">
+    <div *ngIf="uploadedFileName">
+        <div class="uploaded-title">Uploaded file:</div>
+        <div class="uploaded-text-file">
+            {{uploadedFileName}}
+        </div>
+    </div>
+    <button class="upload-btn" (click)="upload()">
+        {{uploadedFileName ?  'Change Uploaded File' : 'Upload File'}}
+    </button>
+    <input hidden type="file" #inputUpload [(ngModel)]="uploadedFile" (change)="getTextFileDetails($event)"
+        accept="text/plain">
+</div>
